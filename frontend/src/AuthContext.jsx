@@ -46,4 +46,7 @@ export function AuthProvider({ children }) {
   );
 }
 
-export const useAuth = () => useContext(AuthContext);
+// Separated into its own export so Vite Fast Refresh works correctly
+export function useAuth() {
+  return useContext(AuthContext);
+}
